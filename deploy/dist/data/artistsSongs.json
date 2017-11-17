@@ -1,0 +1,65 @@
+[
+  {
+    "url_name": "thelunatics",
+    "name": "The lunatics",
+    "banner": "dist/images/artists/artistbanner1.jpg",
+    "image": "dist/images/artists/artist1.jpg",
+    "genre": ["Pop","Rock","Folk"],
+    "songs": [
+      {"image": "dist/images/songs/song1.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg", "displayName": "The lunatics - Come Together" },
+      {"image": "dist/images/songs/song2.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg", "displayName": "The lunatics - Drive my car" },
+      {"image": "dist/images/songs/song3.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg", "displayName": "The lunatics - Loser" },
+      {"image": "dist/images/songs/song4.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg", "displayName": "The lunatics - All my loving" },
+      {"image": "dist/images/songs/song5.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg", "displayName": "The lunatics - Taxman" },
+      {"image": "dist/images/songs/song6.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg", "displayName": "The lunatics - Tonight we do" },
+      {"image": "dist/images/songs/song7.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg", "displayName": "The lunatics - Revolver" },
+      {"image": "dist/images/songs/song8.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg", "displayName": "The lunatics - Here comes the sun" },
+      {"image": "dist/images/songs/song9.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg", "displayName": "The lunatics - We should not" },
+      {"image": "dist/images/songs/song10.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg", "displayName": "The lunatics - Better man" },
+      {"image": "dist/images/songs/song11.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg", "displayName": "The lunatics - Help from my friend" },
+      {"image": "dist/images/songs/song12.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg", "displayName": "The lunatics - Since tonight" }
+    ]
+  },
+  {
+    "url_name": "lafiestanegra",
+    "name": "La fiesta negra",
+    "banner": "dist/images/artists/artistbanner2.jpg",
+    "image": "dist/images/artists/artist2.jpg",
+    "genre": ["New age","Celtic","World"],
+    "songs": [
+      {"image": "dist/images/songs/song20.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg", "displayName": "La fiesta negra - Laetha" },
+      {"image": "dist/images/songs/song19.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg", "displayName": "La fiesta negra - Only if" },
+      {"image": "dist/images/songs/song18.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg", "displayName": "La fiesta negra - Trains over fall" },
+      {"image": "dist/images/songs/song17.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg", "displayName": "La fiesta negra - Nothing else" },
+      {"image": "dist/images/songs/song16.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg", "displayName": "La fiesta negra - Tonight we are" },
+      {"image": "dist/images/songs/song15.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg", "displayName": "La fiesta negra - In the night" },
+      {"image": "dist/images/songs/song14.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg", "displayName": "La fiesta negra - Nothing else" },
+      {"image": "dist/images/songs/song13.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg", "displayName": "La fiesta negra - The truth" },
+      {"image": "dist/images/songs/song12.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg", "displayName": "La fiesta negra - Whatever may be" },
+      {"image": "dist/images/songs/song11.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg", "displayName": "La fiesta negra - Stop falling" },
+      {"image": "dist/images/songs/song10.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg", "displayName": "La fiesta negra - Come now to" },
+      {"image": "dist/images/songs/song9.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg", "displayName": "La fiesta negra - Nothing rules" },
+      {"image": "dist/images/songs/song8.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg", "displayName": "La fiesta negra - Yes we are" }
+    ]
+  },
+  {
+    "url_name": "kingofthemood",
+    "name": "King of the mood",
+    "banner": "dist/images/artists/artistbanner3.jpg",
+    "image": "dist/images/artists/artist3.jpg",
+    "genre": ["Pop","Rock","Folk"],
+    "songs": [
+      {"image": "dist/images/songs/song10.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg", "displayName": "King of the mood - Better man" },
+      {"image": "dist/images/songs/song11.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg", "displayName": "King of the mood - Help from my friend" },
+      {"image": "dist/images/songs/song12.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg", "displayName": "King of the mood - Since tonight" },
+      {"image": "dist/images/songs/song13.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg", "displayName": "King of the mood - Shotgun" },
+      {"image": "dist/images/songs/song14.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg", "displayName": "King of the mood - Solitude" },
+      {"image": "dist/images/songs/song15.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg", "displayName": "King of the mood - Woman are we" },
+      {"image": "dist/images/songs/song16.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg", "displayName": "King of the mood - Silence of the lamb" },
+      {"image": "dist/images/songs/song17.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg", "displayName": "King of the mood - Sun sun sun" },
+      {"image": "dist/images/songs/song18.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg", "displayName": "King of the mood - Truth be told" },
+      {"image": "dist/images/songs/song19.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg", "displayName": "King of the mood - Horrifying" },
+      {"image": "dist/images/songs/song20.jpg", "url": "http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg", "displayName": "King of the mood - Shatered in pieces" }
+    ]
+  }
+]

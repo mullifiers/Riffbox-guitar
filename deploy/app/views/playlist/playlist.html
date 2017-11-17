@@ -1,0 +1,162 @@
+<div data-ng-controller="UserPlayListCtrl as playlist">
+
+  <div class="artist-banner" data-ng-show="playlist.playlistBanner" style="background-image:url({{playlist.playlistBanner}});">
+
+    <div class="artist-inner">
+
+      <div class="artist-img" data-ng-show="playlist.playlistImage">
+        <img src="{{playlist.playlistImage}}" class="img-circle img-polaroid"/>
+      </div>
+
+      <h3>
+        {{playlist.playlistName}}
+      </h3>
+
+      <div class="artist-style">
+        <div class="artist-genre" ng-repeat="genre in playlist.playlistGenre">
+          <span>{{genre}}</span>
+        </div>
+      </div>
+
+      <div class="artist-actions">
+
+        <button class="btn btn-primary" ng-click="playlist.addSongsAndPlay(generalPlaylist.audioPlaylist,mediaPlayer)"><i class="fa fa-headphones"></i>&nbsp;&nbsp;Play all songs</button>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="share-artist">
+
+    <div class="share-artist__buttons">
+      <a href="javascript:;" class="btn-icon btn-icon-sm btn-twitter" tooltip-placement="bottom" tooltip="Twitter" tooltip-append-to-body="true"><i class="fa fa-twitter"></i></a>
+      <a href="javascript:;" class="btn-icon btn-icon-sm btn-facebook" tooltip-placement="bottom" tooltip="Facebook" tooltip-append-to-body="true"><i class="fa fa-facebook"></i></a>
+      <a href="javascript:;" class="btn-icon btn-icon-sm btn-google-plus" tooltip-placement="bottom" tooltip="Google plus" tooltip-append-to-body="true"><i class="fa fa-google-plus"></i></a>
+      <a href="javascript:;" class="btn-icon btn-icon-sm btn-pinterest" tooltip-placement="bottom" tooltip="Pinterest" tooltip-append-to-body="true"><i class="fa fa-pinterest"></i></a>
+      <a href="javascript:;" class="btn-icon btn-icon-sm btn-instagram" tooltip-placement="bottom" tooltip="Instagram" tooltip-append-to-body="true"><i class="fa fa-instagram"></i></a>
+    </div>
+
+  </div>
+
+  <div class="page page-artist">
+
+    <div class="row">
+
+      <div class="col-md-8">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="music-listing">
+
+              <div class="music-listing__header">
+
+                <div class="music-listing__actions-top">
+                  <button ng-click="playlist.addSongsAndPlay(generalPlaylist.audioPlaylist,mediaPlayer)" class="btn btn-primary"><i class="fa fa-headphones"></i>&nbsp;&nbsp;Play all</button>
+                  <!--<button ng-click="artist.addSongs(generalPlaylist.audioPlaylist)" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add</button>-->
+
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-bordered btn-bordered-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-plus"></i>&nbsp;&nbsp; <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a ng-click="playlist.addSongs(generalPlaylist.audioPlaylist)" href="javascript:;">Add to Queue</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="music-listing__filter">
+                  <input type="text" class="form-control" ng-model="searchText" placeholder="Filter">
+                </div>
+
+              </div>
+
+              <div class="music-listing__songs">
+
+                <div class="music-listing__row" ng-repeat="song in playlist.userPlaylist | filter:searchText">
+
+                  <div class="music-listing__number">
+                    {{ $index+1 }}
+                    <div class="play-button">
+                      <button ng-click="generalPlaylist.addSong(song)" class="btn btn-primary"><i class="fa fa-play-circle"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="music-listing__row-actions">
+                    <i class="fa fa-heart action" title="Add to Favorites"></i>
+                    <div class="btn-group">
+                      <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-book action"></i>
+                      </a>
+
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:;" data-ng-click="generalPlaylist.createNewPlaylist(song)">New Playlist</a></li>
+                        <li class="divider"></li>
+
+                        <li id="user-menu" class="nav-item" ng-repeat="playlist_list in generalPlaylist.userPlaylists track by $index">
+                          <a href="javascript:;" data-ng-click="playlist.addSongToPlaylist(song,playlist_list.name)">
+                            {{playlist_list.name}}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <i class="fa fa-retweet action" title="Share to Feed"></i>
+                    <a data-ng-click="playlist.removeSongFromPlaylist(song,playlist.playlistName)"><i class="fa fa-trash-o action" title="More Options..."></i></a>
+                  </div>
+
+                  <div class="music-listing__name">
+
+                    <div class="music-listing__thumbnail">
+                      <img ng-src="{{song.image}}" alt="song__image"/>
+                    </div>
+
+                    <div class="music-listing__artist-name">
+                      {{ song.artist }}
+                    </div>
+                    <div class="music-listing__song-name">
+                      {{ song.title }}
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="empty-playlist" ng-hide="playlist.userPlaylist.length">
+
+                  <div class="empty-icon">
+                    <i class="musicicon-dj4">
+
+                    </i>
+                  </div>
+                  <div class="empty-message">
+                    You dont have any item in the playlist
+                  </div>
+
+                  <div class="empty-message">
+                    <a ng-href="#/artist-list" class="btn btn-primary">Search for new artists</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      
+
+    </div>
+
+  </div>
+
+</div>

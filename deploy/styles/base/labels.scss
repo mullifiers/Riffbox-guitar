@@ -1,0 +1,88 @@
+.label-default {
+  background-color: #999;
+}
+
+.label-default[href]:hover, .label-default[href]:focus {
+  background-color: gray;
+}
+
+.label-primary {
+  background-color: $color--primary;
+}
+
+.label-primary[href]:hover, .label-primary[href]:focus {
+  background-color: $color--success;
+}
+
+.label-success {
+  background-color: $color--success;
+}
+
+.label-success[href]:hover, .label-success[href]:focus {
+  background-color: $color--success;
+}
+
+.label-info {
+  background-color: $color--info;
+}
+
+.label-info[href]:hover, .label-info[href]:focus {
+  background-color: $color--info;
+}
+
+.label-warning {
+  background-color: $color--warning;
+}
+
+.label-warning[href]:hover, .label-warning[href]:focus {
+  background-color: $color--warning;
+}
+
+.label-danger {
+  background-color: $color--danger;
+}
+
+.label-danger[href]:hover, .label-danger[href]:focus {
+  background-color: #e24f25;
+}
+
+.label {
+  padding: .5em .8em;
+}
+
+.label-info-alt {
+  background: $color--info-alt;
+}
+
+a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
+  color: #333;
+  background-color: #fff;
+}
+
+.container .jumbotron {
+  @include border-radius(0px);
+}
+
+.thumbnail {
+  @include border-radius(0px);
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+}
+
+.thumbnail > img, .thumbnail a > img {
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbnail .caption {
+  padding: 9px;
+  color: #767676;
+}
+
+a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
+  border-color: #333;
+}

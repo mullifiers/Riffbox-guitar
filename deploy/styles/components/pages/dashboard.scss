@@ -1,0 +1,71 @@
+.page-dashboard {
+  .panel {
+    margin-bottom:0px;
+  }
+
+  .panel-body--dashboard {
+    padding-bottom:0px;
+    position:relative;
+  }
+
+  .music-genres-listing .list-item__image {
+    min-height:160px;
+  }
+
+  .dashboard-banner {
+    padding-top:80px;
+    padding-bottom:80px;
+    background:url(../images/dashboardbanner.jpg);
+    background-size:cover;
+    text-align:center;
+    position:relative;
+    border-bottom:5px solid $color--gray-light;
+
+    &:before {
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height: 100%;
+      display:block;
+      background:rgba(62,62,62,0.7);
+    }
+
+    .dashboard-banner__content {
+      color:white;
+      max-width:60%;
+      margin:auto;
+      position: relative;
+
+      & > h2 {
+        margin-bottom:20px;
+      }
+
+      & > h5 {
+        line-height: 22px;
+        margin-bottom:20px;
+      }
+    }
+  }
+
+  .tabs-actions {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+
+    & > i {
+      color:$color--gray-light;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+
+  .chat-bar {
+    display:none;
+  }
+
+  .chat-bar.visible {
+    display:table-cell;
+  }
+}

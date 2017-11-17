@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGI,iDAAmB;EACjB,KAAK,EAAC,IAAI;AAOZ,iDAAmB;EACjB,KAAK,EAAC,KAAK",
+"sources": ["player.scss"],
+"names": [],
+"file": "player.css"
+}

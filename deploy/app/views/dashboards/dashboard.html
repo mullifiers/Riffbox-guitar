@@ -1,0 +1,539 @@
+<div class="page page-full page-dashboard two-column">
+
+  <section class="inner-wrapper scrollable">
+
+    <div class="inner-page">
+
+      <section class="dashboard-banner">
+
+        <div class="dashboard-banner__content">
+          <h2>
+            Find the Best songs, beat by beat
+          </h2>
+
+          <h5>
+            Groovy gives you access to the best music, anywhere. Start searching for songs by artist, album or genre and create your own
+            playlist to share with your friends
+          </h5>
+
+          <a class="btn btn-primary" href="#/artist-list">
+            Start searching
+          </a>
+
+        </div>
+
+      </section>
+
+      <section>
+        <section class="panel panel-default panel-default-clean">
+          <div class="panel-body panel-body--dashboard">
+
+            <tabset class="ui-tab">
+              <tab heading="New Artists">
+
+                <div class="divider"></div>
+
+                <div data-ng-controller="ArtistListingCtrl as artistListing">
+                  <div class="row music-covers-listing minified">
+
+                    <div data-ng-repeat="artistItem in ArtistsSrv.artists" class="col-md-3">
+
+                      <div class="list-item__wrap">
+
+                        <div class="list-item__image">
+                          <img ng-src="{{artistItem.image}}"/>
+                          <div class="list-item__play">
+                            <a class="list-item__play-button" ng-href="#/artist/{{artistItem.url_name}}">
+                              <i class="fa fa-2x fa-stumbleupon">
+
+                              </i>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="list-item__name">
+                          <h6>
+                            {{artistItem.name}}
+                          </h6>
+                        </div>
+
+                        <div class="list-item__style">
+                          <div class="artist-genre" ng-repeat="genre in artistItem.genre">
+                            <span>{{genre}}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </tab>
+
+              <tab heading="New albums">
+
+                <div class="divider"></div>
+
+                <div data-ng-controller="AlbumsCtrl as albums">
+                  <div class="row music-covers-listing minified">
+
+                    <div data-ng-repeat="album in AlbumsSrv.albums" class="col-md-3">
+
+                      <div class="list-item__wrap">
+
+                        <div class="list-item__image">
+                          <img ng-src="{{album.image}}"/>
+                          <div class="list-item__play">
+                            <a class="list-item__play-button" ng-href="#/artist/{{album.url_name}}">
+                              <i class="fa fa-2x fa-stumbleupon">
+
+                              </i>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="list-item__name">
+                          <h6 class="color-primary">
+                            {{album.artist}}
+                          </h6>
+                          <h6>
+                            {{album.name}}
+                          </h6>
+                        </div>
+
+                        <div class="list-item__style">
+                          <div class="artist-genre" ng-repeat="genre in album.genre">
+                            <span>{{genre}}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </tab>
+
+              <tab heading="Genres">
+
+                <div class="divider"></div>
+
+                <div data-ng-controller="GenresCtrl as genres">
+
+                  <div class="row music-genres-listing">
+
+                    <div data-ng-repeat="genre in GenresSrv.genres" class="col-md-3">
+
+                      <div class="list-item__wrap">
+
+                        <a href="#/artist/{{genre.url_name}}">
+                          <div class="list-item__image">
+                            <img ng-src="{{genre.image}}" alt="genre image"/>
+                            <div class="list-item__name">
+                              <div class="genre-icon">
+                                <i class="{{genre.icon}}">
+
+                                </i>
+                              </div>
+                              <h5>
+                                {{genre.name}}
+                              </h5>
+                            </div>
+
+                          </div>
+                        </a>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </tab>
+
+            </tabset>
+
+            <div class="tabs-actions">
+              <i class="fa fa-bullseye">
+
+              </i>
+              <i class="fa fa-list">
+
+              </i>
+            </div>
+
+          </div>
+        </section>
+      </section>
+
+      <section>
+
+        <section class="panel panel-default panel-default-clean">
+
+          <div class="panel-body">
+
+            <h4>
+              <i class="fa fa-heart color-primary"></i>&nbsp;&nbsp; Your friends are listening to
+            </h4>
+
+            <div class="now-playing">
+              <div class="row">
+                <div class="col-md-3 now-playing__column">
+
+                  <div class="now-playing__item">
+
+                    <div class="now-playing__image">
+                      <img src="dist/images/team2.jpg" alt="" class="img64_64 img-circle">
+                      <div class="now-playing__music-icon">
+                        <i class="fa fa-check">
+
+                        </i>
+                      </div>
+                    </div>
+
+                    <div class="now-playing__name">
+                      <h6>
+                        Kate Westeroz
+                      </h6>
+                    </div>
+
+                    <div class="now-playing__song">
+                      Sultains of swing - Dire Straights
+                    </div>
+
+                    <div class="now-playint__rating">
+
+                      <h6>
+                        <span class="rating-value">59</span>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                      </h6>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3 now-playing__column">
+
+                  <div class="now-playing__item">
+
+                    <div class="now-playing__image">
+                      <img src="dist/images/team4.jpg" alt="" class="img64_64 img-circle">
+                      <div class="now-playing__music-icon">
+                        <i class="fa fa-check">
+
+                        </i>
+                      </div>
+                    </div>
+
+                    <div class="now-playing__name">
+                      <h6>
+                        George Steveland
+                      </h6>
+                    </div>
+
+                    <div class="now-playing__song">
+                      Tonight is the deal - Tot on fire
+                    </div>
+
+                    <div class="now-playint__rating">
+
+                      <h6>
+                        <span class="rating-value">35</span>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                      </h6>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3 now-playing__column">
+
+                  <div class="now-playing__item">
+
+                    <div class="now-playing__image">
+                      <img src="dist/images/team6.jpg" alt="" class="img64_64 img-circle">
+                      <div class="now-playing__music-icon">
+                        <i class="fa fa-check">
+
+                        </i>
+                      </div>
+                    </div>
+
+                    <div class="now-playing__name">
+                      <h6>
+                        Steve Passeland
+                      </h6>
+                    </div>
+
+                    <div class="now-playing__song">
+                      On the spotlight - Kings of doom
+                    </div>
+
+                    <div class="now-playint__rating">
+
+                      <h6>
+                        <span class="rating-value">27</span>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                      </h6>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3 now-playing__column">
+
+                  <div class="now-playing__item">
+
+                    <div class="now-playing__image">
+                      <img src="dist/images/team5.jpg" alt="" class="img64_64 img-circle">
+                      <div class="now-playing__music-icon">
+                        <i class="fa fa-check">
+
+                        </i>
+                      </div>
+                    </div>
+
+                    <div class="now-playing__name">
+                      <h6>
+                        Anthony Walsh
+                      </h6>
+                    </div>
+
+                    <div class="now-playing__song">
+                      Together we are - Legendaries
+                    </div>
+
+                    <div class="now-playint__rating">
+
+                      <h6>
+                        <span class="rating-value">28</span>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                        <i class="fa fa-star-o color-primary"></i>
+                      </h6>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <br/>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </div>
+
+  </section>
+
+  <aside class="aside chat-bar scrollable" id="sidebar">
+
+    <div class="aside-inner-fixed">
+      <div class="panel panel-default panel-transparent panel-default-clean">
+
+        <div class="chat-window">
+
+            <div class="friends-list">
+              <div class="friend-item online">
+                <div class="friend-image">
+                  <img src="dist/images/team3.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Philip Gragoline</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item online">
+                <div class="friend-image">
+                  <img src="dist/images/team4.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Chris Factory</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item online">
+                <div class="friend-image">
+                  <img src="dist/images/team5.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Tony Banken</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item online">
+                <div class="friend-image">
+                  <img src="dist/images/team6.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Gregory Anderson</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item online">
+                <div class="friend-image">
+                  <img src="dist/images/team2.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Antony walshy</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team3.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Philip Gragoline</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team4.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Chris Factory</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team5.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Tony Banken</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team3.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Philip Gragoline</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team4.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Chris Factory</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team5.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Tony Banken</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team6.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Gregory Anderson</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team2.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Antony walshy</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+
+              <div class="friend-item offline">
+                <div class="friend-image">
+                  <img src="dist/images/team3.jpg" alt="" class="img30_30 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Philip Gragoline</h5>
+                  <h6>
+                    New york
+                  </h6>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+  

@@ -1,0 +1,123 @@
+.ui-tab-container {
+  border: 1px solid #e9e9e9;
+  @include border-radius(0px);
+}
+
+.nav-tabs {
+  border-bottom:none;
+}
+
+.ui-tab-container .ui-tab .nav-tabs {
+  margin-bottom: 0;
+}
+
+.ui-tab-container .nav-tabs {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.ui-tab-container .nav-tabs.nav-justified {
+  border-bottom: 0;
+}
+
+.ui-tab-container .nav-tabs.nav-justified > li > a {
+  border-bottom-color: transparent;
+}
+
+.ui-tab-container .nav-tabs > li.active > a {
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+
+.ui-tab-container .nav-tabs > li.active > a:hover {
+  border: 1px solid transparent;
+}
+
+.ui-tab-container .nav-tabs > li > a {
+  padding: 10px 15px;
+}
+
+.ui-tab-container .nav-tabs > li > a:hover {
+  background-color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+}
+
+.ui-tab-container .tab-content {
+  padding: 15px;
+}
+
+.ui-tab-container.ui-tab-success {
+  border: 1px solid #d5ffe1;
+}
+
+.ui-tab-container.ui-tab-success .nav-tabs {
+  background-color: #eefff6;
+  border-bottom: 1px solid #d5ffe1;
+}
+
+.ui-tab-container.ui-tab-info {
+  border: 1px solid #cbebff;
+}
+
+.ui-tab-container.ui-tab-info .nav-tabs {
+  background-color: #eff6ff;
+  border-bottom: 1px solid #cbebff;
+}
+
+.ui-tab-container.ui-tab-warning {
+  border: 1px solid #ffeed6;
+}
+
+.ui-tab-container.ui-tab-warning .nav-tabs {
+  background-color: #fffbef;
+  border-bottom: 1px solid #ffeed6;
+}
+
+.ui-tab-container.ui-tab-danger {
+  border: 1px solid #ffd6d4;
+}
+
+.ui-tab-container.ui-tab-danger .nav-tabs {
+  background-color: #fff1ed;
+  border-bottom: 1px solid #ffd6d4;
+}
+
+.ui-tab .nav-tabs {
+  margin-bottom: 15px;
+}
+
+.ui-tab .nav-tabs.nav-justified > li.active > a {
+  border-bottom-color: transparent;
+}
+
+.ui-tab .nav-tabs > li.active > a {
+  background-color: #fff;
+}
+
+.ui-tab .nav-tabs a:hover {
+  cursor: pointer;
+}
+
+.ui-tab {
+  .nav-tabs>li.active>a,
+  .nav-tabs>li.active>a:focus,
+  .nav-tabs>li.active>a:hover {
+    border:none;
+    border-bottom:3px solid $color--primary;
+    background:transparent;
+  }
+
+  .nav-tabs>li>a,
+  .nav-tabs>li>a:focus,
+  .nav-tabs>li>a:hover {
+    background:transparent;
+    border:none;
+  }
+
+  .nav-tabs>li>a:focus,
+  .nav-tabs>li>a:hover {
+    background:transparent;
+    border:none;
+    border-bottom:3px solid $color--gray-light;
+  }
+}

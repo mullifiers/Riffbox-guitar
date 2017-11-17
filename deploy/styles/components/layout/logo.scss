@@ -1,0 +1,81 @@
+/* Logo area */
+
+.logo {
+  position: absolute;
+  width: 270px;
+  height: 65px;
+  color: #ffffff;
+  background:white;
+  line-height: 65px;
+  text-align: left;
+  z-index:2;
+  display:none;
+
+  .logo-link {
+    float:left;
+  }
+}
+
+.logo-search {
+  width: 150px;
+  margin: 0;
+  float: left;
+  position: relative;
+  margin :{
+    left: 20px;
+    top: 15px;
+  }
+
+  input {
+    padding-left: 40px;
+    height: 35px;
+    font-size: 13px;
+    background:$color--gray-light;
+    border:none;
+    color:$color--text;
+    @include border-radius(20px);
+  }
+
+  .icon {
+    position: absolute;
+    left: 15px;
+    top: 11px;
+    color:white;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo {
+    display: inline-block;
+    width: 270px;
+    color: #ffffff;
+    border-right: none;
+  }
+
+  .nav-min .logo {
+//    width: 60px;
+  }
+}
+
+.logo > a {
+  text-align:center;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  font-size: 30px;
+  font-weight: normal;
+  vertical-align: middle;
+  color: #ffffff;
+  background:$color--primary;
+}
+
+@media (min-width: 768px) {
+  .logo > a {
+    color: #ffffff;
+  }
+}
+
+.logo > a .logo-icon {
+  color: #ffffff;
+  font-size: 35px;
+}

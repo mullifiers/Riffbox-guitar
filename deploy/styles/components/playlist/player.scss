@@ -1,0 +1,130 @@
+.player-region {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  background:darken($color--secondary,5%);
+  border-top:2px solid $color--primary;
+  z-index:11;
+}
+
+.player-image-region {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height:140px;
+  background-size:cover !important;
+  background-position:center center !important;
+  z-index:10;
+  padding:0px;
+
+  &:before {
+    content:"";
+    width:100%;
+    position:absolute;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:block;
+    z-index:1;
+  }
+
+  .song-info__text {
+    color:white;
+    padding:20px;
+    position:relative;
+    z-index:2;
+
+    .song-info__title {
+      font-weight:bold;
+      margin-bottom:5px;
+    }
+  }
+}
+
+.player-control {
+  padding:{
+    top:10px;
+    bottom:10px;
+  }
+
+  .btn {
+    padding:6px 12px;
+    color:white;
+  }
+
+  .song-info {
+    margin: {
+      bottom:10px;
+      left:5px;
+    }
+    height:40px;
+
+    img {
+      width:40px;
+      height:auto;
+      border-radius:2px;
+    }
+
+    .song-info__image {
+      float:left;
+      margin-right:10px;
+    }
+
+    .song-info__text {
+      color:white;
+
+      .song-info__title {
+        font-weight:bold;
+        margin-bottom:5px;
+      }
+    }
+  }
+
+  .song-duration {
+    display:block;
+    width:100%;
+    margin-top:10px;
+    height:12px;
+
+
+    @media (min-width: 768px) {
+      margin-top:0px;
+      display:inline-block;
+      width:50%;
+    }
+
+    .song-duration-beg {
+      float:left;
+      width:15%;
+      text-align:center;
+    }
+
+    .progress {
+      float:left;
+      width:70%;
+      height: 4px;
+      line-height: 60px;
+      @include border-radius(80px);
+      margin: {
+        top:7px;
+        bottom:10px;
+      }
+    }
+
+    .song-duration-end {
+      float:right;
+      width:15%;
+      text-align:center;
+    }
+  }
+
+  .player-control-bottom {
+    clear:both;
+  }
+
+  .controlling-options {
+    display:inline-block;
+    width:270px;
+  }
+}

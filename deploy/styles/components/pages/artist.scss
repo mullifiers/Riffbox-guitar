@@ -1,0 +1,130 @@
+.artist-banner {
+  position: relative;
+  height: 342px;
+  margin: 0 auto;
+  text-align:center;
+  color:white;
+  padding: {
+    top:50px;
+    bottom:50px;
+  }
+  border-bottom:2px solid $color--primary;
+
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left:0;
+    background: rgba(62, 62, 62, 0.7);
+  }
+
+  .artist-inner {
+    display: inline-block;
+    width: 50%;
+    max-width: 70%;
+    margin: 0;
+    vertical-align: middle;
+    position:relative;
+
+    h5 {
+      line-height: 22px;
+    }
+  }
+
+  .artist-img {
+    margin-top:20px;
+
+    img {
+      width:100px;
+      height:auto;
+      padding:4px;
+      border:3px solid white;
+      border-bottom-color: transparent;
+    }
+  }
+
+  .artist-style {
+    .artist-genre {
+      display:inline-block;
+      margin:{
+        right:10px;
+      }
+      font-weight:bold;
+
+      span{
+        line-height: 13px;
+
+        &:before {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translate(0, 0);
+          content: "\f111";
+          font-size: 8px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .artist-actions {
+    display:inline-block;
+    margin:auto;
+    margin-top:20px;
+
+    .btn {
+      display:inline-block;
+      margin-right:10px;
+    }
+  }
+}
+
+.share-artist {
+  height: 60px;
+  background: #fff;
+  text-align: center;
+  line-height: 60px;
+
+  .share-artist__buttons {
+    display:inline-block;
+    margin:auto;
+
+    .btn {
+      display:inline-block;
+      margin-right:5px;
+    }
+  }
+}
+
+.artist-sub-header {
+  background:white;
+  padding: {
+    left:40px;
+    right:40px;
+    top:5px;
+    bottom:5px;
+  }
+
+  .artist-stats-block {
+    display:inline-block;
+    margin-right:20px;
+    padding:10px;
+
+    .stats-label {
+      color:$color--gray;
+    }
+
+    .stats-value {
+      color:$color--secondary;
+      font-size:14px;
+    }
+  }
+}

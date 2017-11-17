@@ -1,0 +1,67 @@
+.now-playing {
+  text-align:center;
+
+  @media (min-width: 768px) {
+    .now-playing__column {
+      border-right:1px solid $color--gray-very-light;
+    }
+  }
+
+  .now-playing__column:last-child {
+    border:none;
+  }
+
+  .now-playing__image {
+    display:inline-block;
+    position:relative;
+
+    .now-playing__music-icon {
+      display:block;
+      top:0;
+      right:0;
+      position:absolute;
+      @include border-radius(100%);
+      background: white;
+      border: 2px solid white;
+      line-height:10px;
+
+      & > i {
+        color:$color--gray;
+        border-radius: 100%;
+        border: 2px solid #bcbcbc;
+        font-size: 7px;
+        margin-right: 0;
+        padding: 2px;
+      }
+    }
+  }
+
+  .now-playing__name {
+    color:$color--secondary;
+  }
+
+  .now-playint__rating {
+
+    .rating-value {
+      font-weight:bold;
+    }
+
+    color:$color--secondary;
+  }
+
+  .now-playing__song {
+    font-size:10px;
+    color:$color--gray;
+  }
+
+  .now-playing__artist {
+    margin: {
+      top:10px;
+    }
+
+    i {
+      color:$color--primary;
+    }
+  }
+
+}

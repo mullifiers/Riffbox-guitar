@@ -1,0 +1,116 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("../fonts/music.eot");
+	src: url("../fonts/music.eot#iefix") format("embedded-opentype"),
+	url("../fonts/music.woff") format("woff"),
+	url("../fonts/music.ttf") format("truetype"),
+	url("../fonts/music.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="musicicon-"]:before, [class*=" musicicon-"]:before,
+[class^="musicicon-"]:after, [class*=" musicicon-"]:after {   
+	font-family: Flaticon;
+    font-style: normal;
+}.musicicon-acoustic4:before {
+	content: "\e000";
+}
+.musicicon-alto:before {
+	content: "\e001";
+}
+.musicicon-applause:before {
+	content: "\e002";
+}
+.musicicon-audio41:before {
+	content: "\e003";
+}
+.musicicon-audio42:before {
+	content: "\e004";
+}
+.musicicon-bandmaster:before {
+	content: "\e005";
+}
+.musicicon-bass4:before {
+	content: "\e006";
+}
+.musicicon-bell32:before {
+	content: "\e007";
+}
+.musicicon-boombox3:before {
+	content: "\e008";
+}
+.musicicon-bugle:before {
+	content: "\e009";
+}
+.musicicon-clarinet1:before {
+	content: "\e00a";
+}
+.musicicon-cornet3:before {
+	content: "\e00b";
+}
+.musicicon-cymbals2:before {
+	content: "\e00c";
+}
+.musicicon-dj4:before {
+	content: "\e00d";
+}
+.musicicon-french6:before {
+	content: "\e00e";
+}
+.musicicon-herald:before {
+	content: "\e00f";
+}
+.musicicon-loudspeaker8:before {
+	content: "\e010";
+}
+.musicicon-microphone67:before {
+	content: "\e011";
+}
+.musicicon-microphone68:before {
+	content: "\e012";
+}
+.musicicon-music200:before {
+	content: "\e013";
+}
+.musicicon-music201:before {
+	content: "\e014";
+}
+.musicicon-musical84:before {
+	content: "\e015";
+}
+.musicicon-piano16:before {
+	content: "\e016";
+}
+.musicicon-piccolo:before {
+	content: "\e017";
+}
+.musicicon-radio42:before {
+	content: "\e018";
+}
+.musicicon-radio43:before {
+	content: "\e019";
+}
+.musicicon-saxophone8:before {
+	content: "\e01a";
+}
+.musicicon-side10:before {
+	content: "\e01b";
+}
+.musicicon-treble4:before {
+	content: "\e01c";
+}
+.musicicon-trombone3:before {
+	content: "\e01d";
+}
+.musicicon-trumpet13:before {
+	content: "\e01e";
+}
+.musicicon-tuba1:before {
+	content: "\e01f";
+}
+.musicicon-violin9:before {
+	content: "\e020";
+}
+.musicicon-xylophone6:before {
+	content: "\e021";
+}

@@ -1,0 +1,350 @@
+<div data-ng-controller="ArtistCtrl as artist">
+
+  <div class="artist-banner" data-ng-show="artistBanner" style="background-image:url({{artistBanner}});">
+    <div class="artist-inner">
+
+      <div class="artist-img" data-ng-show="artistImage">
+        <img ng-src="{{artistImage}}" class="img-circle img-polaroid"/>
+      </div>
+
+      <h3>
+        {{artistName}}
+      </h3>
+
+      <h5>
+        {{artistAbout}}
+      </h5>
+
+      <div class="artist-style">
+        <div class="artist-genre" ng-repeat="genre in artistGenre">
+          <span>{{genre}}</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="artist-sub-header">
+
+    <div class="artist-stats-block">
+      <div class="share-artist__buttons">
+        <a href="javascript:;" class="btn-icon btn-icon-sm btn-twitter" tooltip-placement="bottom" tooltip="Twitter" tooltip-append-to-body="true"><i class="fa fa-twitter"></i></a>
+        <a href="javascript:;" class="btn-icon btn-icon-sm btn-facebook" tooltip-placement="bottom" tooltip="Facebook" tooltip-append-to-body="true"><i class="fa fa-facebook"></i></a>
+        <a href="javascript:;" class="btn-icon btn-icon-sm btn-google-plus" tooltip-placement="bottom" tooltip="Google plus" tooltip-append-to-body="true"><i class="fa fa-google-plus"></i></a>
+        <a href="javascript:;" class="btn-icon btn-icon-sm btn-pinterest" tooltip-placement="bottom" tooltip="Pinterest" tooltip-append-to-body="true"><i class="fa fa-pinterest"></i></a>
+        <a href="javascript:;" class="btn-icon btn-icon-sm btn-instagram" tooltip-placement="bottom" tooltip="Instagram" tooltip-append-to-body="true"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="artist-stats-block pull-right">
+      <button class="btn {{artist.following_class}}" data-ng-click="artist.follow()">{{artist.following}}</button>
+    </div>
+
+  </div>
+
+  <div class="page page-artist">
+
+    <div class="row">
+
+      <div class="col-md-8">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="music-listing">
+
+              <div class="music-listing__header">
+
+                <div class="music-listing__actions-top">
+                  <button ng-click="artist.addSongsAndPlay(generalPlaylist.audioPlaylist,mediaPlayer)" class="btn btn-primary"><i class="fa fa-headphones"></i>&nbsp;&nbsp;Play all</button>
+                  <!--<button ng-click="artist.addSongs(generalPlaylist.audioPlaylist)" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add</button>-->
+
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-bordered btn-bordered-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-plus"></i>&nbsp;&nbsp; <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a ng-click="artist.addSongs(generalPlaylist.audioPlaylist)" href="javascript:;">Add to Queue</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="music-listing__filter">
+                  <input type="text" class="form-control" ng-model="searchText" placeholder="Filter">
+                </div>
+
+                <div class="music-listing__switch">
+                  <a class="btn btn-switch" href="javascript:;" data-ng-click="artist.toggleAlbumsList();" tooltip-placement="bottom" tooltip="View Albums" tooltip-append-to-body="true">
+                    <i class="fa fa-list">
+
+                    </i>
+                  </a>
+                  <a class="btn btn-switch" href="javascript:;" data-ng-click="artist.toggleFullList();" tooltip-placement="bottom" tooltip="View all songs" tooltip-append-to-body="true">
+                    <i class="fa fa-sliders">
+
+                    </i>
+                  </a>
+                </div>
+
+              </div>
+
+              <div class="music-listing__songs albumlist" data-ng-show="artist.AlbumList">
+
+                <div class="album-wrapper" ng-repeat="album in artistPlaylistAlbums | filter:searchText">
+
+                  <div class="album_image">
+                    <img ng-src="{{album.album_image}}" alt="album image"/>
+                  </div>
+
+                  <div class="album_name">
+                    <p class="text-muted">
+                      {{album.album_release}}
+                    </p>
+                    <h4>
+                      {{album.album_name}}
+                    </h4>
+                    <div>
+                      <a class="btn btn-bordered btn-bordered-primary">Save this album</a>
+                    </div>
+                  </div>
+
+
+                  <div class="music-listing__row" ng-repeat="song in album.songs | filter:searchText">
+
+                    <div class="music-listing__number">
+                      {{ $index+1 }}
+                      <div class="play-button">
+                        <button ng-click="generalPlaylist.addSong(song)" class="btn btn-primary"><i class="fa fa-play-circle"></i></button>
+                      </div>
+                    </div>
+
+                    <div class="music-listing__row-actions">
+                      <i class="fa fa-heart action" title="Add to Favorites"></i>
+                      <div class="btn-group">
+                        <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                          <i class="fa fa-book action"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="javascript:;" data-ng-click="generalPlaylist.createNewPlaylist(song)">New Playlist</a></li>
+                          <li class="divider"></li>
+
+                          <li id="user-menu" class="nav-item" ng-repeat="playlist_list in generalPlaylist.userPlaylists track by $index">
+                            <a href="javascript:;" data-ng-click="artist.addSongToPlaylist(song,playlist_list.name)">
+                              {{playlist_list.name}}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <i class="fa fa-retweet action" title="Share to Feed"></i>
+                      <i class="fa fa-list action" title="More Options..."></i>
+                    </div>
+
+                    <div class="music-listing__name">
+
+                      <div class="music-listing__thumbnail">
+                        <img ng-src="{{song.image}}" alt="song__image"/>
+                      </div>
+
+                      <div class="music-listing__artist-name">
+                        {{ song.artist }}
+                      </div>
+
+                      <div class="music-listing__song-name">
+                        {{ song.title }}
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="music-listing__songs fulllist" data-ng-show="artist.FullList">
+                <div class="music-listing__row full-songs-wrapper" ng-repeat="song in artistPlaylist | filter:searchText">
+
+                  <div class="music-listing__number">
+                    {{ $index+1 }}
+                    <div class="play-button">
+                      <button ng-click="generalPlaylist.addSong(song)" class="btn btn-primary"><i class="fa fa-play-circle"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="music-listing__row-actions">
+                    <i class="fa fa-heart action" title="Add to Favorites"></i>
+                    <div class="btn-group">
+                      <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-book action"></i>
+                      </a>
+
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:;" data-ng-click="generalPlaylist.createNewPlaylist(song)">New Playlist</a></li>
+                        <li class="divider"></li>
+
+                        <li id="user-menu" class="nav-item" ng-repeat="playlist_list in generalPlaylist.userPlaylists track by $index">
+                          <a href="javascript:;" data-ng-click="artist.addSongToPlaylist(song,playlist_list.name)">
+                            {{playlist_list.name}}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <i class="fa fa-retweet action" title="Share to Feed"></i>
+                    <i class="fa fa-list action" title="More Options..."></i>
+                  </div>
+
+                  <div class="music-listing__name">
+
+                    <div class="music-listing__thumbnail">
+                      <img ng-src="{{song.image}}" alt="song__image"/>
+                    </div>
+
+                    <div class="music-listing__artist-name">
+                      {{ song.artist }}
+                    </div>
+                    <div class="music-listing__song-name">
+                      {{ song.title }}
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>
+              <i class="fa fa-history color-primary"></i>&nbsp;&nbsp; Following this artist
+            </h4>
+            <div>
+
+              <ul class="list-inline">
+                <li>
+                  <img src="dist/images/user.png" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team1.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team2.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team3.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team4.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team5.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team6.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team3.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team4.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+                <li>
+                  <img src="dist/images/team5.jpg" alt="" class="img30_30 img-circle" tooltip-placement="bottom" tooltip="John Doeser" tooltip-append-to-body="true">
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>
+              <i class="fa fa-headphones color-primary"></i>&nbsp;&nbsp; Related artists
+            </h4>
+            <div class="related-items">
+
+              <div class="related-item">
+                <div class="item-image">
+                  <img src="dist/images/artists/artist1.jpg" class="img40_40"/>
+                </div>
+                <div class="item-name">
+                  <h5>
+                    The Beatles
+                  </h5>
+                </div>
+              </div>
+              <div class="related-item">
+                <div class="item-image">
+                  <img src="dist/images/artists/artist2.jpg" class="img40_40"/>
+                </div>
+                <div class="item-name">
+                  <h5>
+                    Jason Derulo
+                  </h5>
+                </div>
+              </div>
+              <div class="related-item">
+                <div class="item-image">
+                  <img src="dist/images/artists/artist3.jpg" class="img40_40"/>
+                </div>
+                <div class="item-name">
+                  <h5>
+                    Aloe Black
+                  </h5>
+                </div>
+              </div>
+              <div class="related-item">
+                <div class="item-image">
+                  <img src="dist/images/artists/artist4.jpg" class="img40_40"/>
+                </div>
+                <div class="item-name">
+                  <h5>
+                    Pharel Williams
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>
+              <i class="fa fa-tags color-primary"></i>&nbsp;&nbsp; Tag list
+            </h4>
+            <div class="tag-list">
+
+              <a class="btn-tag" href="javascript:;">Music</a>
+              <a class="btn-tag" href="javascript:;">Country</a>
+              <a class="btn-tag" href="javascript:;">British classic folk</a>
+              <a class="btn-tag" href="javascript:;">Electric song</a>
+              <a class="btn-tag" href="javascript:;">Mood Fire</a>
+              <a class="btn-tag" href="javascript:;">House</a>
+              <a class="btn-tag" href="javascript:;">Groove melody</a>
+              <a class="btn-tag" href="javascript:;">Tuning</a>
+              <a class="btn-tag" href="javascript:;">Street songs</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

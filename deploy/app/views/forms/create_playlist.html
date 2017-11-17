@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h3 class="modal-title">New playlist</h3>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">
+              <span class="fa fa-headphones"></span>
+          </span>
+          <input required data-ng-model="playlistName" type="text"
+                 class="form-control"
+                 placeholder="Playlist name" value="{{playlistName}}"
+                  >
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()">OK</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

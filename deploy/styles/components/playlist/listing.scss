@@ -1,0 +1,181 @@
+.music-listing {
+  padding:10px;
+
+  .music-listing__header {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color--gray-very-light;
+    height:60px;
+
+    .music-listing__actions-top {
+      float:left;
+      .btn {
+        margin:{
+          right:5px;
+        }
+      }
+    }
+
+    .music-listing__filter {
+      max-width:40%;
+      float:right;
+    }
+
+    .music-listing__switch {
+      float:right;
+      margin: {
+        right:10px;
+      }
+
+      .btn-switch {
+        padding: {
+          left:10px;
+          right:10px;
+        }
+        border:none;
+        background:transparent;
+        color:$color--text;
+      }
+    }
+  }
+
+  .music-listing__songs {
+
+
+    .music-listing__row {
+      clear:both;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color--gray-very-light;
+    }
+
+    .music-listing__number {
+      float:left;
+      width:50px;
+      height:35px;
+      line-height: 35px;
+      text-align:center;
+      position:relative;
+      margin-right:10px;
+
+      .play-button {
+        position:absolute;
+        top:-2px;
+        left: 0px;
+        visibility:hidden;
+        opacity:0;
+        @include transition(all 0.01s ease-out);
+
+        .btn {
+          padding:6px 18px;
+          @include border-radius(20px);
+        }
+      }
+    }
+
+    .music-listing__thumbnail {
+      float:left;
+      margin-right:10px;
+
+      img {
+        width:35px;
+        height:auto;
+        @include border-radius(2px);
+      }
+    }
+
+    .music-listing__name {
+
+      .music-listing__artist-name {
+        font-weight:bold;
+      }
+    }
+
+    .music-listing__row-actions {
+      height: 30px;
+      margin-right: 10px;
+      text-align: right;
+      line-height: 30px;
+      float: right;
+      visibility:hidden;
+      opacity:0;
+      @include transition(all 0.01s ease-out);
+
+      .action {
+        display: inline-block;
+        text-align:center;
+        cursor:pointer;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #fff;
+        line-height: 24px;
+        vertical-align: middle;
+        background: #fff;
+        color: $color--secondary-light;
+
+        &:hover {
+          border: 1px solid $color--gray-light;
+          background: white;
+          color: $color--secondary-light;
+          @include border-radius(100%);
+        }
+      }
+    }
+
+    .music-listing__row:hover .music-listing__row-actions,
+    .music-listing__row:hover .play-button
+    {
+      opacity:1;
+      visibility: visible;
+    }
+  }
+
+  .album-wrapper {
+    margin-bottom:20px;
+    margin-top:20px;
+
+    .music-listing__thumbnail {
+      display:none;
+    }
+  }
+
+  .album_image {
+    float:left;
+    margin: {
+      top:0px;
+      bottom:20px;
+      right:20px;
+    }
+
+    img {
+      width:100px;
+      height:auto;
+      @include border-radius(2px);
+    }
+  }
+
+  .album_name {
+
+    h4 {
+      border:none;
+      margin-bottom:10px;
+      margin-top:0;
+    }
+  }
+}
+
+.empty-playlist {
+
+  text-align:center;
+  color:$color--gray-light;
+
+  .empty-icon {
+    font-size:100px;
+  }
+
+  .empty-message {
+    margin-top:20px;
+    font-size:20px;
+    color:$color--gray;
+  }
+}

@@ -1,0 +1,38 @@
+.list-inline {
+  margin-left: -5px;
+}
+
+.list-inline {
+  li {
+    padding-right: 2px;
+    padding-left: 2px;
+    margin-top: 6px;
+  }
+}
+
+.related-items {
+
+  .related-item {
+    margin-bottom:10px;
+  }
+
+  .item-image {
+    display:inline-block;
+    img {
+      @include border-radius(2px);
+    }
+  }
+  .item-name {
+    display:inline-block;
+    margin-left:10px;
+  }
+}
+
+.tag-list {
+
+  a {
+    display:inline-block;
+    margin-right:3px;
+    margin-top:6px;
+  }
+}
