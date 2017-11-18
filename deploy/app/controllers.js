@@ -632,7 +632,7 @@ angular.module("app.ui.ctrls", []).controller("NotifyCtrl", ["$scope", "loggit",
  Provides general controllers for the app
  */
 
-angular.module('app.music', ['mediaPlayer', 'ngDragDrop'])
+angular.module('app.music', ['mediaPlayer', 'ngDragDrop','ngFileUpload'])
   .controller('PlayListCtrl', ['$scope', 'PlayListSrv', 'CreatePlaylistSrv',
     function ($scope, PlayListSrv, CreatePlaylistSrv) {
       this.audioPlaylist = [];
@@ -718,8 +718,8 @@ angular.module('app.music', ['mediaPlayer', 'ngDragDrop'])
 
 
           }])
-  .controller('AlbumCtrl', ['$scope', '$routeParams', 'AlbumSrv', 'PlayListSrv', 'navigationMenuService', 'loggit',
-    function ($scope, $routeParams, AlbumSrv, PlayListSrv, navigationMenuService, loggit) {
+  .controller('AlbumCtrl', ['$scope','Upload', '$routeParams', 'AlbumSrv', 'PlayListSrv', 'navigationMenuService', 'loggit',
+    function ($scope,Upload, $routeParams, AlbumSrv, PlayListSrv, navigationMenuService, loggit) {
 
       this.AlbumSrv = AlbumSrv;
       var albumPlaylistVar = [];
@@ -798,12 +798,27 @@ angular.module('app.music', ['mediaPlayer', 'ngDragDrop'])
         });
 
       };
-
+      this.uploadAudio = function(playlist){
+        console.log('okll');
+        return 'nj'
+      }
       this.addSongToPlaylist = function (song, playlist) {
 
         PlayListSrv.addSongToPlaylist(song, playlist);
       };
-
+       $scope.upload = function (file) {
+        Upload.upload({
+            url: 'upload/url',
+            data: {file: file, 'username': $scope.username}
+        }).then(function (resp) {
+            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+        }, function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
+    };
       this.toggleAlbumsList = function () {
         this.AlbumList = true;
         this.FullList = false;

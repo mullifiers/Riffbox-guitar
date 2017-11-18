@@ -208,12 +208,12 @@ angular.module("app.ui.services", []).factory("loggit", [
 
   })
   .factory("PlayListSrv",
-  function() {
+  function(FileUploader) {
 
     /**************************
      Saves and loads Playlists from the localStorage
      **************************/
-
+    
     var PlayListObj = {},
       playlists = {
         list: []
@@ -299,14 +299,30 @@ angular.module("app.ui.services", []).factory("loggit", [
 
     };
 
-    PlayListObj.addSongToPlaylist = function(song,playListName) {
+    PlayListObj.uploadAudio = function(playlistName){
 
-      _.map(PlayListObj.playlists, function(playlist){
+
+       var song 
+        _.map(PlayListObj.playlists, function(playlist){
 
         if(playlist.name == playListName){
 
           playlist.songs.push(song);
 
+          PlayListObj.update(PlayListObj.playlists);
+        }
+
+      });
+    }
+    PlayListObj.uploader = new FileUploader();
+
+    PlayListObj.addSongToPlaylist = function(song,playListName) {
+    
+      
+      _.map(PlayListObj.playlists, function(playlist){
+
+        if(playlist.name == playListName){
+          playlist.songs.push(song);
           PlayListObj.update(PlayListObj.playlists);
         }
 

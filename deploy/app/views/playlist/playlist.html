@@ -20,7 +20,10 @@
 
       <div class="artist-actions">
 
-        <button class="btn btn-primary" ng-click="playlist.addSongsAndPlay(generalPlaylist.audioPlaylist,mediaPlayer)"><i class="fa fa-headphones"></i>&nbsp;&nbsp;Play all songs</button>
+        <button class="btn btn-primary" ng-click="playlist.addSongsAndPlay(generalPlaylist.audioPlaylist,mediaPlayer)"><i class="fa fa-headphones"></i>&nbsp;&nbsp;Play All Songs</button>
+
+        <button ngf-select="upload($file)">Upload on file select</div>
+        <button  nv-file-select uploader="playlist.uploadAudio()" class="btn btn-primary" ><i class="glyphicon glyphicon-upload"></i>&nbsp;&nbsp;Upload New Audio</button>
 
       </div>
 

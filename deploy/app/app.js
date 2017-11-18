@@ -3,7 +3,7 @@
  Initialize the Angular App
  **************************/
 
-var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootstrap", "mgo-angular-wizard", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "countTo", "mediaPlayer","ngDragDrop", "app.music"]).run(["$rootScope", "$location","loggit",
+var app = angular.module("app", ["ngRoute", "ngAnimate","ngFileUpload","app.config", "ui.bootstrap", "mgo-angular-wizard", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "countTo", "mediaPlayer","ngDragDrop", "app.music"]).run(["$rootScope", "$location","loggit",
     function ($rootScope, $location,loggit) {
 
         $(document).ready(function(){
@@ -12,7 +12,7 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
                 $('.page-loading-overlay').addClass("loaded");
                 $('.load_circle_wrapper').addClass("loaded");
 
-                loggit.logSuccess("Welcome to Groovy! Navigate and add songs to your playlists.");
+                loggit.logSuccess("Welcome to RiffBox! Navigate and add songs to your playlists.");
 
             },1000);
 
