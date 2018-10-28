@@ -1,5 +1,0 @@
-#Ignore dis folder and node_modules folder
-.idea/*
-node_modules
-bower_components
-styles/*/*.css

@@ -1,3 +1,4 @@
+@@ -1,98 +0,0 @@
 # -----------------------------------------------------------------
 # .gitignore
 # Bare Minimum Git
@@ -72,12 +73,12 @@ Thumbs.db
 *.sqlite
 
 # ignore compiled files
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+# *.com
+# *.class
+# *.dll
+# *.exe
+# *.o
+# *.so
 
 # ignore packaged files
 *.7z
@@ -96,3 +97,4 @@ Thumbs.db
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+\ No newline at end of file

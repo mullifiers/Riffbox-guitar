@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html >
+<head >
+    <script src="./socket.io.js"></script>
+    <link type="text/css" rel="stylesheet" href="./node_modules/angular-material/angular-material.css">
+    <link type="text/css" rel="stylesheet" href="./node_modules/angular-timeline/dist/angular-timeline.css"/>
+    <link type="text/css" rel="stylesheet" href="./node_modules/angular-timeline/dist/angular-timeline-animations.css"/>
+    <link type="text/css" rel="stylesheet" href="./node_modules/angular-hotkeys/build/hotkeys.css"/>
+    <link type="text/css" rel="stylesheet" href="./node_modules/animate.css/animate.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/scrollbars.css"> 
+    <link type="text/css" rel="stylesheet" href="./css/autocomplete.css"> 
+    <link type="text/css" rel="stylesheet" href="./css/card.css"> 
+    <link type="text/css" rel="stylesheet" href="./css/disabled.css"> 
+    <link type="text/css" rel="stylesheet" href="./iconfont/material-icons.css">  
+    <link type="text/css" rel="stylesheet" href="./node_modules/css-star-rating/dist/css/star-rating.css">
+
+    <style type="text/css">
+    @keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  /* Disable text selection, or your app will feel like a web page */
+  -webkit-user-select: none;
+  /*-webkit-app-region: drag;*/
+  height: 100%;
+  animation: fadein 1s;
+}
+
+
+    md-toolbar{
+        padding-left: 20px;
+    }
+    .animateHidden
+    {
+        visibility: hidden !important;
+    }
+    md-toast {
+                z-index: 21 !important;
+    }
+    md-toast.md-top {
+                top: calc(10% + 36px);
+    }
+    </style>
+        
+</head> 
+
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./node_modules/angular-material/angular-material.js"></script>
+    <script src="./node_modules/angular-messages/angular-messages.js"></script>
+    <script src="./node_modules/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
+    <script src="./node_modules/angular-timeline/dist/angular-timeline.js"></script>
+    <script src="./node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+    <script src="./node_modules/angular-hotkeys/build/hotkeys.js"></script>
+ 
+        <script src="./node_modules/angular-ui-scroll/dist/ui-scroll.js"></script>
+        <script src="./node_modules/angular-ui-scroll/dist/ui-scroll-grid.js"></script>
+
+   
+    
+ <script>
+        var app=angular.module('myApp',['ngMaterial','ngAnimate','ngMessages','ngFileUpload','angular-scroll-animate','angular-timeline','AnimationsModule','MovieBufferModule','cfp.hotkeys','ui.scroll', 'ui.scroll.grid'])
+        .config(function($mdThemingProvider){
+            $mdThemingProvider.theme('default')
+            
+ .primaryPalette('blue-grey')
+        .dark()
+     .accentPalette('blue-grey');
+        });
+        
+    </script>
+  
+    <script src="./js/controllers/cardsCtrl.js"></script>
+    <script src="./js/controllers/openPatientCtrl.js"></script>
+   
+    <script src="./js/services/Animations.js"></script>
+
+         <script src="./js/services/MovieBuffer.js"></script>
+
+<body data-ng-app="myApp" data-ng-controller="cardsCtrl" layout-fill layout-align="center center" layout="column">  
+
+<md-content layout="row" ui-scroll-viewport  scrolly id="PatientCardsWindow">
+
+<div flex=100 style="margin:14" class="md-title" >
+     <div flex style="margin: 15vh"  class="md-title" ng-if='!ctrl.MovieBuffer.complete'>
+        <div layout="row"   layout-align="space-around space-around">
+                          <md-progress-circular md-diameter=110 style="size: 89px" class="animated fadeIn" md-mode="indeterminate"   color="primary"></md-progress-circular>
+                    </div>
+                    <div class="md-subhead" style="
+                                color: #74858c;
+                            
+                                text-align: center ">
+                
+                
+                
+
+
+                <style>
+                     #notification{ color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 16px; font-weight: lighter; line-height: 50px; letter-spacing: 1px; margin: 0 0 40px 40px; border-bottom: double #555; }
+                   
+                </style>
+
+                Processing on server
+                <div id="notification">
+                    <div class="" ng-if="initial">
+                            fetching current progress from translator, may take few minutes depending on audio length
+                            
+                     </div>
+                     <div  class="" ng-if="!initial">
+                           {{notification}}
+                     </div>
+                     <div class="animated fadeIn" ng-if="ctrl.MovieBuffer.buildingLibrary&&!ctrl.MovieBuffer.caching">
+                            building up Library
+                     </div>
+                     <div class="animated fadeIn" ng-if="ctrl.MovieBuffer.findingTitles">
+                            {{MovieBuffer.count}} title(s) found 
+                     </div> 
+                </div>
+                
+                
+
+
+
+                
+                    </div>      
+        </div>
+   
+        </div>
+        
+</div>
+</div>
+</md-content>
+
+<md-button ng-if="ctrl.PatientBufferServ.PatientCards" data-ng-click="ctrl.addPatientInfo($event)" class="md-fab md-fab-bottom-right" style="position: fixed !important"   aria-label="add new patient" >           
+            <md-icon  >get_app</md-icon>
+     </md-button>
+
+</div>
+
+   
+</body>
+</html>
