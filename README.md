@@ -8,7 +8,7 @@
 
 ![home](https://raw.githubusercontent.com/mullifiers/riffbox/master/.idea/Screenshot%20(6).png)
       
-*Progress Notification UI: Sockets.io Based *
+*Progress Notification UI: Sockets.io Based*
 
 ![home](https://raw.githubusercontent.com/mullifiers/riffbox/master/.idea/Screenshot%20(7).png)
 
